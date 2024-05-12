@@ -22,6 +22,14 @@ class ReviewBot:
         self.reload_attempts = 0
 
     @st.cache_resource
+    def get_driver(self, options):
+        return webdriver.Chrome(
+            service=Service(
+                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+            ),
+            options=options,
+        )
+
     def __initiate_bot(self):
         """Loads up bot web driver"""
         # chrome_options = webdriver.ChromeOptions()
@@ -33,12 +41,7 @@ class ReviewBot:
         options = Options()
         options.add_argument("--disable-gpu")
         options.add_argument("--headless")
-        self.driver = webdriver.Chrome(
-            service=Service(
-                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-            ),
-            options=options,
-        )
+        self.driver = self.get_driver(options)
 
     def get_reviews(self, index, link, num_of_links):
         """Retrieves reviews from Google"""
