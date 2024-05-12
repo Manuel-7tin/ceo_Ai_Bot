@@ -31,8 +31,8 @@ class ReviewBot:
         # VChange 2
 
         options = Options()
-        options.add_argument("--disable-gpu")
-        options.add_argument("--headless")
+        # options.add_argument("--disable-gpu")
+        # options.add_argument("--headless")
         @st.cache_resource
         def get_driver():
             return webdriver.Chrome(
