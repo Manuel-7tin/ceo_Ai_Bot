@@ -7,10 +7,10 @@ from selenium.common.exceptions import WebDriverException, NoSuchElementExceptio
 
 # Chabges to test streamlit: VChange 1
 
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.os_manager import ChromeType
+# from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.service import Service
+# from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.core.os_manager import ChromeType
 #
 
 class ReviewBot:
@@ -22,21 +22,21 @@ class ReviewBot:
 
     def __initiate_bot(self):
         """Loads up bot web driver"""
-        # chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_experimental_option("detach", True)
-        # self.driver = webdriver.Chrome(options=chrome_options)
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_experimental_option("detach", True)
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.reload_attempts = 0
         # VChange 2
 
-        options = Options()
+        # options = Options()
         # options.add_argument("--disable-gpu")
         # options.add_argument("--headless")
-        self.driver = webdriver.Chrome(
-            service=Service(
-                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-            ),
-            options=options,
-        )
+        # self.driver = webdriver.Chrome(
+        #     service=Service(
+        #         ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+        #     ),
+        #     options=options,
+        # )
 
     def get_reviews(self, index, link, num_of_links):
         """Retrieves reviews from Google"""
