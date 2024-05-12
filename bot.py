@@ -29,8 +29,8 @@ class ReviewBot:
         # VChange 2
 
         options = Options()
-        options.add_argument("--disable-gpu")
-        options.add_argument("--headless")
+        # options.add_argument("--disable-gpu")
+        # options.add_argument("--headless")
         self.driver = webdriver.Chrome(
             service=Service(
                 ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
