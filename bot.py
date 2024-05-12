@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
-
+#
 
 class ReviewBot:
     def __init__(self):
@@ -33,7 +33,7 @@ class ReviewBot:
         options.add_argument("--headless")
         self.driver = webdriver.Chrome(
             service=Service(
-                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM, driver_version="2.26").install()
+                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
             ),
             options=options,
         )
