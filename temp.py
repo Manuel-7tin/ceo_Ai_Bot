@@ -27,6 +27,7 @@ with st.echo():
         )
 
     options = Options()
+    options.add_argument("--keep-alive")
     # options.add_argument("--disable-gpu")
     # options.add_argument("--headless")
 
