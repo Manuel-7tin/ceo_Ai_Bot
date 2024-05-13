@@ -27,11 +27,11 @@ with st.echo():
         )
 
     options = Options()
-    options.add_argument("--keep-alive")
-    # options.add_argument("--disable-gpu")
-    # options.add_argument("--headless")
+    # options.add_argument("--keep-alive")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--headless")
 
     driver = get_driver()
-    driver.get("http://example.com")
+    driver.get("https://www.google.com/localservices/prolist?g2lbs=AIQllVwDiiGa9oOIUCw7gitIhAuGMOuomMVm8DHMGuksBpWpcWOVowKmkNa_LoQifno1JGyovc10bhqhQLA6DnaKdbhyuaxVYI-aqwgFIwXXITDjRC4gKD0%3D&hl=en-us&gl=us&ssta=1&oq=Roof%20Masters%2C%20LLC%20901%202nd%20Loop%20Road%0D%0AFlorence%2C%20SC%2029505&src=2&lrlstt=1714313142875&ved=0CAUQjdcJahcKEwjwqIOQiuWFAxUAAAAAHQAAAAAQSQ&q=United%20Roofing%20Systems%20Houston%2C%20TX%2077064&slp=MgBAAVIECAIgAIgBAA%3D%3D&spp=Cg0vZy8xMWg3NjRybWc0OvQBV2k4UUFCQUJFQUlpSjNWdWFYUmxaQ0J5YjI5bWFXNW5JSE41YzNSbGJYTWdhRzkxYzNSdmJpQjBlQ0EzTnpBMk5Lb0JnQUVLQ0M5dEx6QXpiREp1Q2dndmJTOHdOMkpmYkJBQktob2lGblZ1YVhSbFpDQnliMjltYVc1bklITjVjM1JsYlhNb0FESWZFQUVpRzIzTURlNEhsa2VCR3AzT242OEhGNmVpM2ZxTmJXZUdQMG0ySlRJckVBSWlKM1Z1YVhSbFpDQnliMjltYVc1bklITjVjM1JsYlhNZ2FHOTFjM1J2YmlCMGVDQTNOekEyTkE9PQ%3D%3D&scp=ChdnY2lkOnJvb2ZpbmdfY29udHJhY3RvchIAGgAqElJvb2ZpbmcgY29udHJhY3Rvcg%3D%3D")
 
     st.code(driver.page_source)
